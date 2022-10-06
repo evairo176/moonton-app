@@ -14,6 +14,13 @@ use Inertia\Inertia;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/admin',function(){
+    return 'hi admin';
+})->middleware('role:admin');
+
+Route::get('/user',function(){
+    return 'hi user';
+})->middleware('role:user');
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [

@@ -1,8 +1,8 @@
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import React, { Component } from "react";
-import "../../../css/textInput.css";
-import "../../../css/PrimaryButton.css";
+// import "../../../css/textInput.css";
+// import "../../../css/PrimaryButton.css";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Head, Link } from "@inertiajs/inertia-react";
 

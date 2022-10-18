@@ -1,8 +1,8 @@
 import InputLabel from "@/Components/InputLabel";
 import TextInput from "@/Components/TextInput";
 import React from "react";
-import "../../../css/textInput.css";
-import "../../../css/PrimaryButton.css";
+// import "../../../css/textInput.css";
+// import "../../../css/PrimaryButton.css";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { Head, Link } from "@inertiajs/inertia-react";
 // import PropTypes from "prop-types";
@@ -58,12 +58,16 @@ export default function Login(props) {
                                 </div>
                             </div>
                             <div className="grid space-y-[14px] mt-[30px]">
-                                <PrimaryButton type="button" variant="primary">
-                                    <span className="text-base font-semibold">
-                                        Start Watching
-                                    </span>
-                                </PrimaryButton>
-
+                                <Link href={route("prototype.dashboard")}>
+                                    <PrimaryButton
+                                        type="button"
+                                        variant="primary"
+                                    >
+                                        <span className="text-base font-semibold">
+                                            Start Watching
+                                        </span>
+                                    </PrimaryButton>
+                                </Link>
                                 <Link href={route("prototype.register")}>
                                     <PrimaryButton
                                         type="button"

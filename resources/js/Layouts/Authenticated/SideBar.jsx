@@ -1,4 +1,6 @@
 import React, { Fragment } from "react";
+// import route from "vendor/tightenco/ziggy/src/js";
+import { Link } from "@inertiajs/inertia-react";
 
 function SideBar() {
     return (
@@ -84,7 +86,10 @@ function SideBar() {
                             <div className="text-gray-1 side-link mb-4">
                                 Others
                             </div>
-                            <a href="pricing.html" className="side-link">
+                            <Link
+                                href={route("prototype.subscriptionPlan")}
+                                className="side-link"
+                            >
                                 <svg
                                     width="24"
                                     height="24"
@@ -99,7 +104,7 @@ function SideBar() {
                                     />
                                 </svg>
                                 Payments
-                            </a>
+                            </Link>
                             <a href="#!" className="side-link">
                                 <svg
                                     width="24"

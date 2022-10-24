@@ -7,7 +7,7 @@ import { Head } from "@inertiajs/inertia-react";
 import MovieCard from "@/Components/MovieCard";
 // import "../../../css/sidebar.css";
 
-function Dashboard({ auth }) {
+function Dashboard({ auth, featureMovies, movies }) {
     var flickityOptions = {
         cellAlign: "left",
         contain: true,
@@ -17,7 +17,6 @@ function Dashboard({ auth }) {
         prevNextButtons: false,
         draggable: ">1",
     };
-
     return (
         <Fragment>
             <Authenticated auth={auth}>
@@ -26,22 +25,22 @@ function Dashboard({ auth }) {
                         rel="stylesheet"
                         href="https://unpkg.com/flickity@2/dist/flickity.min.css"
                     />
-                    <title>Dashboard </title>
+                    <title>Dashboard</title>
                 </Head>
                 <div>
                     <div className="font-semibold text-[22px] text-black mb-4">
                         Featured Movies
                     </div>
                     <Flickity className="gap-[30px]" options={flickityOptions}>
-                        {[1, 2, 3, 4].map((e) => {
+                        {featureMovies.map((value) => {
                             return (
                                 <FeatureMovie
-                                    key={e}
-                                    slug="the-batman-night-fury"
-                                    name={`the batman ${e}`}
-                                    category="comedy"
-                                    thumbnail="https://picsum.photos/id/1/300/300"
-                                    rating={e + 1}
+                                    key={value.id}
+                                    slug={value.slug}
+                                    name={`${value.name}`}
+                                    category={value.category}
+                                    thumbnail={value.thumbnail}
+                                    rating={value.rating}
                                 />
                             );
                         })}
@@ -49,17 +48,17 @@ function Dashboard({ auth }) {
                 </div>
                 <div className="mt-[50px]">
                     <div className="font-semibold text-[22px] text-black mb-4">
-                        Browse 1
+                        Browse
                     </div>
                     <Flickity className="gap-[30px]" options={flickityOptions}>
-                        {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((e) => {
+                        {movies.map((value) => {
                             return (
                                 <MovieCard
-                                    key={e}
-                                    slug="the-batman-night-fury"
-                                    name={`the batman ${e}`}
-                                    category="comedy"
-                                    thumbnail="https://picsum.photos/id/1/300/300"
+                                    key={value.id}
+                                    slug={value.slug}
+                                    name={`${value.name}`}
+                                    category={value.category}
+                                    thumbnail={value.thumbnail}
                                 />
                             );
                         })}

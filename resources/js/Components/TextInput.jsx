@@ -1,25 +1,25 @@
 import React, { useEffect, useRef } from "react";
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 TextInput.propTypes = {
-    type: propTypes.oneOf(["text", "email", "password", "number", "file"]),
-    name: propTypes.string,
-    value: propTypes.oneOf([propTypes.string, propTypes.number]),
-    defaultValue: propTypes.oneOf([propTypes.string, propTypes.number]),
-    className: propTypes.string,
-    variant: propTypes.oneOf(["primary", "error", "primary-outline"]),
-    autoComplete: propTypes.string,
-    required: propTypes.bool,
-    isFocused: propTypes.bool,
-    handleChange: propTypes.func,
-    placeholder: propTypes.string,
-    isError: propTypes.bool,
+    type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
+    name: PropTypes.string,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    className: PropTypes.string,
+    variant: PropTypes.oneOf(["primary", "error", "primary-outline"]),
+    autoComplete: PropTypes.string,
+    required: PropTypes.bool,
+    isFocused: PropTypes.bool,
+    handleChange: PropTypes.func,
+    placeholder: PropTypes.string,
+    isError: PropTypes.bool,
 };
 
 export default function TextInput({
-    type = "text",
+    type = null,
     name,
-    value,
+    value = null,
     className,
     autoComplete,
     required,
